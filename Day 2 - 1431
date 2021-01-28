@@ -1,0 +1,77 @@
+/*
+LeetCode Day 2 
+1/27/2020
+
+Back at it again, with a new vote of confidence, Let’s go! 
+
+1431. Kids with Greatest Number of Candies 
+
+I was asked to read thru an array and ask that if for every indexr in the array if added the given number “extracandies”would that index then be the largest.
+The output needs to be, according the the examples provided, a boolean array. 
+
+
+Thought Process: 
+	
+I am sticking with Java again today, I will extend this into other languages in a week or two, as I am well versed in C++, C, Python and Javascript.
+Java just so happens to be my favourite. I am a creature of habit, what can I say. 
+
+First thing is first, I know that I need to read through this array one index at a time, so that called for a for  loop. Int i = 0 , we are starting at the 
+zeroth index this time again, because we need to look at that very first amount of candy. I < candies.length to only go through the amount of indexes in the array. 
+Lastly, i++ to go to an index one after the other. Which gives us. 
+
+For (int i = 0, i < candies.length, i++)
+
+Also, I need to create a variable that will hold the max amount of candy 
+
+Int maxCandy = 0; 
+
+Remember to place all variables at the top of my code, unless only needed within the bounds of a loop, so I placed this on top of my previously created for  loop.
+
+Now for each index that we look at, we are going to compare that number with Max Candy. This is for us to know which number in the array is the largest. 
+
+ maxCandy = Math.max(maxCandy, candies[i])
+
+We then need to generate our result. Which I will provide in another array. I created another array allied result with the below syntax 
+
+List<Boolean> result = new ArrayList<>();
+ I needed to go through the index once more to compare the current index with the added amount of candies with the max number. Which called for another for loop, 
+ just to iterate between indexes and then a if-else statement to compare the two. 
+
+        for(int i = 0; i < candies.length; i++){
+            if(extraCandies+candies[i] >= maxCandy){
+                result.add(true);
+            } else {
+                result.add(false);
+            }
+
+Lastly, I returned the array that I just made called ‘result’ 
+
+Return result; 
+
+ 
+
+
+
+My Solution: 
+*/
+
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int maxCandy = 0;
+        for(int i = 0; i < candies.length; i++){
+            maxCandy = Math.max(maxCandy, candies[i]);
+        }
+        
+        List<Boolean> result = new ArrayList<>();
+        for(int i = 0; i < candies.length; i++){
+            if(extraCandies+candies[i] >= maxCandy){
+                result.add(true);
+            } else {
+                result.add(false);
+            }
+        } 
+        
+        return result;
+    }
+}
+
