@@ -1,0 +1,67 @@
+/*
+Leet Code Day 1 
+1/26/2020
+
+Well, the time has come in my educational journey, I signed up for Leetcode.
+I heard about it all over the internet, Facebook, Reddit, multiple slack groups.
+Honestly, I was beginning to overthink this website, how could so many people be plugging it so much. 
+I am not really sure what held me back for so long, but I had a week off from school in between terms so I decided to give it a shot. 
+It was early Wednesday morning that I opened up the website, it took me a couple of minutes to navigate through and determine a good place to start.
+I am going to strive for solving a couple of problems a week, as it really helps my brian to wake up in the morning. 
+
+Here is the first problem that I tackled. 
+
+
+1480. Running Sum of 1d Array
+	I was asked to create a function that returns the running sum of a given array ‘nums’
+
+Thought process: 
+	This particular morning, I was feeling in the Java mood. It was what made my brain happy, so I went with that. I was going to attempt Python, but it didn’t happen. 
+
+For this problem, I needed to create an array that takes the number in the index before and add it to the current index. Sounds way more confusing than it actually is, ngl. 
+
+First thing I knew I needed was a for loop, because I needed to be able to access  each number in the array individually, which I know can easily be done with a for loop. 
+I needed to start with index 1 (i could not start with 0, because I can not add the first number with the nonexistent one before)  and go all the way through the length
+of the array, which in the constraints calls out the variable ‘nums.length”. After each pass I would need to add one to go to the next index and start the process over, 
+That gave me
+ 
+	for( int i = 1; i< num.lengths; i++) { 
+}
+
+Int i = 1	initializing i as an int (integer) and setting it equal to 1 
+
+I < num.lengths	so that we do not loop so many times that we run completely out of numbers, we need to stay in the bounds on the array. 
+
+i++ 	after each pass through the loop we need to move over to the next index in the array 
+
+
+Next I needed to figure out what goes inside of the loop. The current index that I was on needed to be equal to itself with the addition of the index previous.
+Which gave me this 
+
+Nums[i] += nums[i-1];
+
+
+Nums{i]	the index that we are working with 
++= 	will add what comes after to what is before and set it equal to the before (expanded looked like: nums[i] = nums{i] +  nums[i-1]; ) 
+
+Nums[i-1] 	the index previous
+
+Then I just put it all together! 
+
+
+My Solution:
+
+*/
+
+class Solution {
+    public int[] runningSum(int[] nums) {
+               for (int i = 1; i < nums.length; i++) {
+            nums[i] += nums[i - 1];
+        }
+        return nums; 
+    }
+}
+
+
+
+
