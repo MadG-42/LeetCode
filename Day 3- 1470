@@ -1,2 +1,71 @@
 LeetCode Day 3 
 1/28/2021
+
+Leet Code Day#3 
+1/28/2020
+
+This one was easier for me, I still needed some help getting to the solution but I am starting to wrap my mind around what I need to do. Today’s problem was, 
+
+1470. Shuffle the Array
+
+Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+
+
+
+Thought Process :
+
+	So we are given an evenly indexed array ‘nums” and a number “n”where the n is the number of indexes we are going to take from the end of the array and place each one 
+  in between the first numbers in the array. That was poorly explained, here is an example. 
+Example (A,B,C,D,E,F) n =3→ (A,D,B,E,C.F)
+
+My first inclination was to slip this one array into and then remerge as one, and I spent way longer than I should have on doing that. It was really much simpler than that.
+We needed to create one more array and take an element from the front and one from the back of the original array to form the desired order. Let’s break that down 
+
+First, we needed to create a new array that will store our results. We needed the size to be the same as the original “nums” array.  In java, the syntax for doing that is 
+
+        int [] result = new int [n+n];
+
+We also needed to declare a variable that will help us take the proper index when we put them in place. This could really be called anything, I chose x. 
+
+ Int x = 0; 
+
+Now here is where it gets interesting. We now need to iterate through the array nums, which means another for  loop. We are going to start at the first index, 
+and go through the length of the array minus 1 because we will be taking 2 indexes at a time. To figure out the order. Therefore at the end, we won’t have one left. 
+The for  loop 
+
+for(int i = 0; i < nums.length-1; i+=2){ 
+}
+
+
+For each iteration we want to take the the 1st (0th) element and add that to the result array, then take the nth number and put that next into the result array. 
+Once we have iterated through the entire array, we want to return the array result. 
+
+            result[i]=nums[x++];
+            result[i+1]=nums[n++];      
+
+	Return result: 
+
+
+Solution: 
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+ 
+        int [] result = new int [n+n];
+        int x=0;                          
+        for(int i =0;i<nums.length-1;i+=2){
+            result[i]=nums[x++];
+            result[i+1]=nums[n++];               
+        }
+        return result;  
+}
+}
+Results:
+
+I am excited to keep learning! 
+
+
+
+Runtime: O(n)
