@@ -1,0 +1,55 @@
+LeetCode #4 
+Week 2 Day 1
+
+Today I decided to tackle another question in the easy set, I have a feeling I will be doing most of these, as I suck right now. Anyway, today’s problem. 
+
+1672. Richest Customer Wealth
+
+You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
+
+Thought Process: 
+
+	To be honest, for this problem the explanation provided was a lot easier to understand than some of the others that we have seen. We have a grid of customers and the banks that they have accounts in, as well as the amount of money in said accounts. We need to find the richest person and return the total amount of money that that individual has across all of their accounts. 
+ 	I think this week I will switch things up a bit and use Python. I know. Scandalous… 
+	First thing I need to do is initialize a variable, which I will call maxWealth to zero, I will need to use this variable later and reassign it to a number, but I do not know what the max wealth will be, so I put it at zero.  
+
+	maxWealth = 0
+
+Now I need to read through the grid which in python can be done 
+
+	For i in range(len(accounts));
+
+Then take the sum of the money in each account for cumster i and assign that to a new variable, which will be totalWealth
+
+	totalWealth  = sum(accounts[i])
+
+And then we need to compare the two variables that we created. And make the new maxWealth, whichever is larger.  That way, when we keep cycling through each customer, it will compare to the largest that has been looked at and when the end of the list is done we will have the larger value. 
+
+	Maxwealth = max(maxWealth, totalWealth) 
+
+Lastly, I need to return maxWealth.
+
+	Return maxWealth
+
+
+
+Solution 
+
+class Solution(object):
+    def maximumWealth(self, accounts):
+	maxWealth = 0
+	for i in range(len(accounts)):
+		totalWealth = sum(accounts[i])
+		maxWealth = max(maxWealth, totalWealth)
+	return maxWealth
+
+
+
+Results
+
+
+
+
+Runtime: O(n) 
+
