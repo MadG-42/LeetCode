@@ -1,0 +1,13 @@
+Problem Description - Write an SQL query to report the first name, last name, city, and state of each person in the Person table. If the address of a PersonId is not present in the Address table, report null instead.
+
+Return the result table in any order.
+
+
+My Answer: 
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT OUTER JOIN Address ON Person.PersonID = Address.PersonID
+
+
+Explaination: 
+----to add----
