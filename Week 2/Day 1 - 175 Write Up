@@ -1,7 +1,7 @@
-Problem Description - Write an SQL query to report the first name, last name, city, and state of each person in the Person table. If the address of a PersonId is not present in the Address table, report null instead.
+Problem Description - Write an SQL query to report the first name, last name, city, and state of each person in the Person table. 
+    If the address of a PersonId is not present in the Address table, report null instead.
 
-Return the result table in any order.
-
+    Return the result table in any order.
 
 My Answer: 
 SELECT Person.FirstName, Person.LastName, Address.City, Address.State
@@ -10,4 +10,15 @@ LEFT OUTER JOIN Address ON Person.PersonID = Address.PersonID
 
 
 Explaination: 
-----to add----
+I started taking data classes for my degree and I am LOVING THEM. It is crazy to think that I may have finally found what I want to go into. Not to limit myself by any means but I 
+  just excited that I am liking my classes this much. I decided to start up my daily(ish) leetcode practice to try and see how good at this stuff I can get. This is my 1st database 
+  Leetcode that I have ever done and I did pretty well with it. 
+Since we are combining two tables I knew that a join operation had to be done. So I wrote out the sequence for that. which includes "Select / FROM / JOIN ON" 
+Select - to select which attributes from which table to be presented 
+From the 1st table to join
+JOIN the 2nd table to join 
+ON the key to match table 1 to table 2 
+
+THe one question left to solve was which type of join to use. With the LEFT OUTER JOIN it would present the NULL values like stated in the problem description.
+
+I am excited to continue on this journery. My current goal it to do 2 or 3 a week and build up from there. 
